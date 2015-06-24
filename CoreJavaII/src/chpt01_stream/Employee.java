@@ -1,12 +1,13 @@
 package chpt01_stream;
 
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-public class Employee {
+public class Employee implements Serializable{
 
 	private String name;
 	private double salary;
@@ -14,8 +15,7 @@ public class Employee {
 	
 	public Employee() {}
 	
-	public Employee(String n, double s, int year, int month, int day)
-	{
+	public Employee(String n, double s, int year, int month, int day) {
 		name = n;
 		salary = s;
 		GregorianCalendar calendar = new GregorianCalendar(year, month - 1, day);
@@ -46,14 +46,12 @@ public class Employee {
 		this.hireDay = hireDay;
 	}
 	
-	public void raiseSalary(double byPercent)
-	{
+	public void raiseSalary(double byPercent) {
 		double raise = salary * byPercent / 100;
 		salary += raise;
 	}
 	
-	public String toString()
-	{
+	public String toString() {
 		return this.getName() 
 				+ "[name=" + name + ", salary=" + salary + ", hireDay="
 				+ hireDay + "]";
