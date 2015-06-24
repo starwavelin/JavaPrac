@@ -11,7 +11,9 @@ public class Employee {
 	private String name;
 	private double salary;
 	private Date hireDay;
-		
+	
+	public Employee() {}
+	
 	public Employee(String n, double s, int year, int month, int day)
 	{
 		name = n;
@@ -70,17 +72,21 @@ public class Employee {
 	
 	/**
 	 * Reads employee data from a buffered reader
+	 * Use this method to assign values ot Employee object's instance variables. 
 	 * @param in
 	 */
 	public void readData(Scanner in) {
 		String line = in.nextLine();
 		String[] tokens = line.split("\\|");
-		name = tokens[0];
-		salary = Double.parseDouble(tokens[1]);
+		
+		this.setName(tokens[0]);
+		
+		this.setSalary(Double.parseDouble(tokens[1]));
+		
 		int y = Integer.parseInt(tokens[2]);
 		int m = Integer.parseInt(tokens[3]);
 		int d = Integer.parseInt(tokens[4]);
 		GregorianCalendar calendar = new GregorianCalendar(y, m - 1, d);
-		hireDay = calendar.getTime();
+		this.setHireDay(calendar.getTime());
 	}
 }
