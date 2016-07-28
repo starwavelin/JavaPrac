@@ -7,7 +7,8 @@ public class FindGuitarTester {
 		Inventory inventory = new Inventory();
 		initializeInventory(inventory);
 		
-		Guitar whatErinLiks = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder");
+		Guitar whatErinLiks = new Guitar("", 0, Builder.FENDER, "Stratocastor", 
+				Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 		
 		Guitar guitar = inventory.search(whatErinLiks);
 		if (guitar != null) {

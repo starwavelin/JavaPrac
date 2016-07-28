@@ -2,11 +2,18 @@ package guitarInventory;
 
 public class Guitar {
 	
-	private String serialNumber, builder, model, type, backWood, topWood;
+	/* 1st optimization: ditch String comparisons.
+	 * For those String type variables, except model, all can be represented using Enum. */
+	private String serialNumber, model;
+	private Wood topWood;
+	private Wood backWood;
+	private Type type;
+	private Builder builder;
 	private double price;
 	
-	public Guitar(String serialNumber, double price, String builder, String model,
-			String type, String backWood, String topWood) {
+	
+	public Guitar(String serialNumber, double price, Builder builder, String model,
+			Type type, Wood backWood, Wood topWood) {
 		this.serialNumber = serialNumber;
 		this.builder = builder;
 		this.model = model;
@@ -27,7 +34,7 @@ public class Guitar {
 		this.price = price;
 	}
 	
-	public String getBuilder() {
+	public Builder getBuilder() {
 		return builder;
 	}
 
@@ -35,15 +42,15 @@ public class Guitar {
 		return model;
 	}
 
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
-	public String getBackWood() {
+	public Wood getBackWood() {
 		return backWood;
 	}
 
-	public String getTopWood() {
+	public Wood getTopWood() {
 		return topWood;
 	}
 }
