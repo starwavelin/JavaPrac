@@ -24,4 +24,8 @@ public class Guitar {
 	public GuitarSpec getSpec() {
 		return spec;
 	}
+	
+	public String toString() {
+		return "This guitar had properties: Serial: " + serial + ", Price: " + price + spec.toString();
+	}
 }
