@@ -13,5 +13,4 @@ public class StringTest {
 		System.out.println(s2 == "Hello"); // true
 		System.out.println(s1 == "Hello"); // false
 	}
-	
 }
