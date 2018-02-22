@@ -4,13 +4,13 @@ public class InsertionSort {
 
 	public static void sort(int[] nums) {
 		for (int i = 1; i < nums.length; i++) {
-			int cur = nums[i], j = i - 1;
-			while (j >= 0 && nums[j] > cur) {
-				nums[j + 1] = nums[j--];
+			int j = i;
+			int cur = nums[j];
+			while (j > 0 && cur < nums[j-1]) {
+				nums[j] = nums[j-1];
+				j--;
 			}
-			if (j + 1 != i) {
-				nums[j + 1] = cur;
-			}
+			nums[j] = cur;
 		}
 	}
 	
